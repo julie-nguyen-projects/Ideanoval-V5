@@ -31,7 +31,14 @@ public class CommentDaoImpl implements CommentDao {
     }
 
     @Override
-    public List<Comment> getAllComments() {
+    public List getAllComments() {
         return  sf.getCurrentSession().createQuery("FROM Comment ").getResultList();
+    }
+
+    @Override
+    public List getAllCommentsOfAnIdea(long idIdea) {
+        return sf.getCurrentSession().createQuery("FROM Comment WHERE idea.id=:idIdea")
+                .setParameter("idIdea", idIdea)
+                .getResultList();
     }
 }

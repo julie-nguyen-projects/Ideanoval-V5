@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <c:forEach items="${comments}" var="comment">
+        <c:forEach items="${idea.comments}" var="comment">
             <div class="row">
                 <div class="col-md-12">
                     <h5>Commentaire posté par ${comment.user.pseudo}</h5>

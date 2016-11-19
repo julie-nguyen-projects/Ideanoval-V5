@@ -39,7 +39,7 @@ public class Idea implements Serializable{
     @JoinColumn(name = "idUser")
     private User user;
 
-    @OneToMany(mappedBy = "idea")
+    @OneToMany(mappedBy = "idea", fetch = FetchType.EAGER)
     private List<Comment> comments;
 
 //======================

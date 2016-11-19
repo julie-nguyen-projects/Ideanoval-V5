@@ -25,27 +25,19 @@
 
 	<!-- DaoImplementations -->
 	<bean id="ideaDao" class="fr.humanbooster.ideanoval.dao.impl.IdeaDaoImpl">
-		<constructor-arg>
-			<ref bean="sessionFactory" />
-		</constructor-arg>
+		<constructor-arg ref="sessionFactory"/>
 	</bean>
 
 	<bean id="userDao" class="fr.humanbooster.ideanoval.dao.impl.UserDaoImpl">
-		<constructor-arg>
-			<ref bean="sessionFactory" />
-		</constructor-arg>
+		<constructor-arg ref="sessionFactory"/>
 	</bean>
 
 	<bean id="categoryDao" class="fr.humanbooster.ideanoval.dao.impl.CategoryDaoImpl">
-		<constructor-arg>
-			<ref bean="sessionFactory" />
-		</constructor-arg>
+		<constructor-arg ref="sessionFactory"/>
 	</bean>
 
 	<bean id="commentDao" class="fr.humanbooster.ideanoval.dao.impl.CommentDaoImpl">
-		<constructor-arg>
-			<ref bean="sessionFactory" />
-		</constructor-arg>
+		<constructor-arg ref="sessionFactory"/>
 	</bean>
 
 	<!-- Business -->

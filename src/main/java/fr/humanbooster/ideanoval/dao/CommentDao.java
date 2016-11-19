@@ -1,7 +1,6 @@
 package fr.humanbooster.ideanoval.dao;
 
 import fr.humanbooster.ideanoval.business.Comment;
-import fr.humanbooster.ideanoval.business.User;
 
 import java.util.List;
 
@@ -12,5 +11,7 @@ public interface CommentDao {
 
     public void addComment(Comment comment);
 
-    public List<Comment> getAllComments();
+    public List getAllComments();
+
+    public List getAllCommentsOfAnIdea(long idIdea);
 }

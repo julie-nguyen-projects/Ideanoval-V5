@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Nea on 14/11/2016.
  */
 public interface IdeaDao {
-    public List<Idea> findAllIdeas();
+    public List findAllIdeas();
 
     public void createIdea(Idea idea);
 

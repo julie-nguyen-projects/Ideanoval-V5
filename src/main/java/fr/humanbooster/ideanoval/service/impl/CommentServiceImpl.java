@@ -31,7 +31,12 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> getAllComments() {
+    public List getAllComments() {
         return cd.getAllComments();
+    }
+
+    @Override
+    public List getAllCommentsOfAnIdea(long idIdea) {
+        return cd.getAllCommentsOfAnIdea(idIdea);
     }
 }

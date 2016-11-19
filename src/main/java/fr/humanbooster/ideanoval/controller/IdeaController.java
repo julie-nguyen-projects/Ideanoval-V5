@@ -79,7 +79,7 @@ public class IdeaController {
         Idea idea = ideaService.getIdeaById(id);
         System.out.println("<<< Date " + idea.getPublicationDateIdea());
         mav.addObject("idea", idea);
-        mav.addObject("comments", commentService.getAllComments());
+        mav.addObject("comments", commentService.getAllCommentsOfAnIdea(idea.getIdIdea()));
         return mav;
     }
 
@@ -94,8 +94,6 @@ public class IdeaController {
         User user = userService.findUserById(session.getAttribute("id").toString());
         String content = map.get("commentContent").toString();
         Idea idea = ideaService.getIdeaById(idIdea);
-
-        // Ajouter commentaire
         commentService.addComment(content, user, idea);
 
         return anIdea(idIdea);

@@ -26,7 +26,7 @@ public class IdeaDaoImpl implements IdeaDao{
     }
 
     @Override
-    public List<Idea> findAllIdeas() {
+    public List findAllIdeas() {
         return sf.getCurrentSession().createQuery("FROM Idea").getResultList();
     }
 
