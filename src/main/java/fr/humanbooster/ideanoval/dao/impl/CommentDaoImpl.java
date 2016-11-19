@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Created by Julie on 19/11/2016.
  */
@@ -26,5 +28,10 @@ public class CommentDaoImpl implements CommentDao {
     @Override
     public void addComment(Comment comment) {
         sf.getCurrentSession().save(comment);
+    }
+
+    @Override
+    public List<Comment> getAllComments() {
+        return  sf.getCurrentSession().createQuery("FROM Comment ").getResultList();
     }
 }

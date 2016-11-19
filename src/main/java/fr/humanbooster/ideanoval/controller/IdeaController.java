@@ -74,8 +74,7 @@ public class IdeaController {
     public ModelAndView anIdea(@RequestParam(name = "id") String id) {
         ModelAndView mav = new ModelAndView("anIdea");
         mav.addObject("idea", ideaService.getIdeaById(id));
-
-        // TODO mav.addObject des commentaires de l'idée
+        mav.addObject("comments", commentService.getAllComments());
         return mav;
     }
 

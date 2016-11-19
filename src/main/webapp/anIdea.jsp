@@ -33,17 +33,41 @@
             </div>
         </div>
 
-        <!-- TODO image de l'idée à mettre -->
+        <!-- TODO picture -->
         <h5 class="text-center">Idée proposée par ${idea.user.pseudo} <br></h5>
         <br>
         <h5>Description de l'idée :</h5>
         <div class="col-md-10 col-md-offset-1">
             ${idea.description}
         </div>
+    </div>
 </section>
 <!-- TODO vote pour l'idée -->
-<!-- TODO commentaires de l'idée-->
 
+<!-- All the comments -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Commentaires</h2>
+                <hr class="star-primary"></hr>
+            </div>
+        </div>
+
+        <c:forEach items="${comments}" var="comment">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Commentaire posté par ${comment.user.pseudo}</h5>
+                    <br>
+                    <div class="col-md-10 col-md-offset-1">
+                            ${comment.commentContent}
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+</section>
 
 <!-- Comment the idea-->
 <section>

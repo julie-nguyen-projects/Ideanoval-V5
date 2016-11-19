@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by Julie on 19/11/2016.
  */
@@ -26,5 +28,10 @@ public class CommentServiceImpl implements CommentService {
     public void addComment(String content, User user, Idea idea) {
         Comment comment = new Comment(content, user, idea);
         cd.addComment(comment);
+    }
+
+    @Override
+    public List<Comment> getAllComments() {
+        return cd.getAllComments();
     }
 }
