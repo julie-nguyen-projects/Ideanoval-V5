@@ -7,6 +7,7 @@ import fr.humanbooster.ideanoval.service.CategoryService;
 import fr.humanbooster.ideanoval.service.CommentService;
 import fr.humanbooster.ideanoval.service.IdeaService;
 import fr.humanbooster.ideanoval.service.UserService;
+import fr.humanbooster.ideanoval.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -43,6 +44,8 @@ public class IdeaController {
     @Autowired
     private UserController userController = new UserController();
 
+    private DateUtils dateUtils;
+
 //======================
 //Add Idea
 //======================
@@ -73,7 +76,9 @@ public class IdeaController {
     @RequestMapping(value = "/anIdea", method = RequestMethod.GET)
     public ModelAndView anIdea(@RequestParam(name = "id") String id) {
         ModelAndView mav = new ModelAndView("anIdea");
-        mav.addObject("idea", ideaService.getIdeaById(id));
+        Idea idea = ideaService.getIdeaById(id);
+        System.out.println("<<< Date " + idea.getPublicationDateIdea());
+        mav.addObject("idea", idea);
         mav.addObject("comments", commentService.getAllComments());
         return mav;
     }

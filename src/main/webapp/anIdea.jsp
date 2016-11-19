@@ -34,7 +34,7 @@
         </div>
 
         <!-- TODO picture -->
-        <h5 class="text-center">Idée proposée par ${idea.user.pseudo} <br></h5>
+        <h5 class="text-center">Idée proposée par ${idea.user.pseudo} le ${idea.publicationDateIdea} <br></h5>
         <br>
         <h5>Description de l'idée :</h5>
         <div class="col-md-10 col-md-offset-1">
@@ -42,7 +42,7 @@
         </div>
     </div>
 </section>
-<!-- TODO vote pour l'idée -->
+<!-- TODO vote -->
 
 <!-- All the comments -->
 <section>

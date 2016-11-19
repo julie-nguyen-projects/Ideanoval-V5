@@ -1,5 +1,7 @@
 package fr.humanbooster.ideanoval.business;
 
+import fr.humanbooster.ideanoval.utils.DateUtils;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
@@ -94,8 +96,8 @@ public class Idea implements Serializable{
         this.description = descriptionIdea;
     }
 
-    public Date getPublicationDateIdea() {
-        return publicationDateIdea;
+    public String getPublicationDateIdea() {
+        return DateUtils.getStringFromDate(this.publicationDateIdea);
     }
 
     public void setPublicationDateIdea(Date publicationDateIdea) {
