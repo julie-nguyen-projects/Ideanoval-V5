@@ -25,6 +25,12 @@ public class Comment implements Serializable{
     @JoinColumn(name = "idUser")
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "idIdea")
+    private Idea idea;
+
+    // TODO add date
+
 //======================
 //Constructors
 //======================
@@ -36,7 +42,13 @@ public class Comment implements Serializable{
         this.user = user;
     }
 
-//======================
+    public Comment(String commentContent, User user, Idea idea) {
+        this.commentContent = commentContent;
+        this.user = user;
+        this.idea = idea;
+    }
+
+    //======================
 //Getters and Setters
 //======================
     public long getIdComment() {
@@ -61,5 +73,13 @@ public class Comment implements Serializable{
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Idea getIdea() {
+        return idea;
+    }
+
+    public void setIdea(Idea idea) {
+        this.idea = idea;
     }
 }

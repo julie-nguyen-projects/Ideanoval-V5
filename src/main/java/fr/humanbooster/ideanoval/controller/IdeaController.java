@@ -4,6 +4,7 @@ import fr.humanbooster.ideanoval.business.Category;
 import fr.humanbooster.ideanoval.business.Idea;
 import fr.humanbooster.ideanoval.business.User;
 import fr.humanbooster.ideanoval.service.CategoryService;
+import fr.humanbooster.ideanoval.service.CommentService;
 import fr.humanbooster.ideanoval.service.IdeaService;
 import fr.humanbooster.ideanoval.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,9 @@ public class IdeaController {
     private CategoryService categoryService;
 
     @Autowired
+    private CommentService commentService;
+
+    @Autowired
     private UserController userController = new UserController();
 
 //======================
@@ -54,16 +58,10 @@ public class IdeaController {
     public ModelAndView addIdeaPost(@ModelAttribute("idea") Idea idea,
                                     @RequestParam Map<String, Object> map) {
         String title = idea.getTitle();
-        System.out.println("title" + title);
         String description = idea.getDescription();
         String idCategory = map.get("ID_CATEGORY").toString();
-        System.out.println("id category" + idCategory);
         User user = userService.findUserById(session.getAttribute("id").toString());
-        System.out.println("user : " + user.toString());
-
         Category category = categoryService.findCategoryById(idCategory);
-
-        System.out.println("category " + category.toString());
         ideaService.createIdea(title, description, category, user);
 
         return userController.welcomePage();
@@ -76,7 +74,27 @@ public class IdeaController {
     public ModelAndView anIdea(@RequestParam(name = "id") String id) {
         ModelAndView mav = new ModelAndView("anIdea");
         mav.addObject("idea", ideaService.getIdeaById(id));
+
+        // TODO mav.addObject des commentaires de l'idée
         return mav;
+    }
+
+
+//======================
+//A user comment an idea
+//======================
+    @RequestMapping(value = "/commentAnIdea", method = RequestMethod.POST)
+    public ModelAndView commentAnIdea(@RequestParam(name = "idea_id") String idIdea,
+                                      @RequestParam Map<String, Object> map) {
+        ModelAndView mav = new ModelAndView("anIdea");
+        User user = userService.findUserById(session.getAttribute("id").toString());
+        String content = map.get("commentContent").toString();
+        Idea idea = ideaService.getIdeaById(idIdea);
+
+        // Ajouter commentaire
+        commentService.addComment(content, user, idea);
+
+        return anIdea(idIdea);
     }
 
 }

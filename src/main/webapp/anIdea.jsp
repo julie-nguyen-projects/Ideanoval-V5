@@ -68,10 +68,10 @@
     <c:if test="${sessionScope.id != null}">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <form action="comment" method="POST">
+                <form action="commentAnIdea" method="POST">
                     <input type="hidden" name="idea_id" value="${idea.idIdea}" />
                     <div class="form-group col-md-12 floating-label-form-group controls">
-                    <textarea rows="6" id="commentContent" class="col-md-12 form-control" style="border:1px solid gray"
+                    <textarea rows="6" name="commentContent" class="col-md-12 form-control" style="border:1px solid gray"
                               placeholder="Votre commentaire ..."></textarea>
                         <br><br>
                     </div>

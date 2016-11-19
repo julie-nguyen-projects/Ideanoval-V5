@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Nea on 13/11/2016.
@@ -35,6 +36,9 @@ public class Idea implements Serializable{
     @ManyToOne
     @JoinColumn(name = "idUser")
     private User user;
+
+    @OneToMany(mappedBy = "idea")
+    private List<Comment> comments;
 
 //======================
 //Constructors
@@ -112,5 +116,13 @@ public class Idea implements Serializable{
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }
