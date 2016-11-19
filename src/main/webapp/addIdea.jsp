@@ -23,7 +23,7 @@
         </div>
     </div>
 </header>
-
+<!-- TODO Poll option -->
 <section>
     <div class="container">
         <form:form method="POST" modelAttribute="idea" action="addIdea">

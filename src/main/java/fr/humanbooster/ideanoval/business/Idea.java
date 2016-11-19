@@ -42,6 +42,9 @@ public class Idea implements Serializable {
     @OneToMany(mappedBy = "idea", fetch = FetchType.EAGER)
     private List<Comment> comments;
 
+    @OneToMany(mappedBy = "idea", fetch = FetchType.LAZY)
+    private List<Vote> votes;
+
 //======================
 //Constructors
 //======================
@@ -126,5 +129,13 @@ public class Idea implements Serializable {
 
     public void setComments(List<Comment> comments) {
         this.comments = comments;
+    }
+
+    public List<Vote> getVotes() {
+        return votes;
+    }
+
+    public void setVotes(List<Vote> votes) {
+        this.votes = votes;
     }
 }

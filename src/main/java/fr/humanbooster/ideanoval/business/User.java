@@ -43,7 +43,11 @@ public class User implements Serializable {
     private List<Comment> comments;
 
     @ManyToOne
+    @JoinColumn(name = "idRole")
     private Role role;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Vote> votes;
 
 //======================
 //Constructors
@@ -137,5 +141,13 @@ public class User implements Serializable {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public List<Vote> getVotes() {
+        return votes;
+    }
+
+    public void setVotes(List<Vote> votes) {
+        this.votes = votes;
     }
 }
