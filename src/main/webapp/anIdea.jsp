@@ -54,23 +54,35 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <form action="comment" method="POST">
-                <input type="hidden" name="idea_id" value="${idea.idIdea}" />
-                <div class="form-group col-md-12 floating-label-form-group controls">
+    <c:if test="${sessionScope.id == null}">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>Vous devez être inscrit(e) et vous connecter pour poster un commentaire.<br></p>
+                <a href="/Ideanoval/register" class="btn btn-success btn-lg">S'inscrire</a>
+                <a href="/Ideanoval/login" class="btn btn-success btn-lg">Se connecter</a>
+            </div>
+        </div>
+
+    </c:if>
+
+    <c:if test="${sessionScope.id != null}">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form action="comment" method="POST">
+                    <input type="hidden" name="idea_id" value="${idea.idIdea}" />
+                    <div class="form-group col-md-12 floating-label-form-group controls">
                     <textarea rows="6" id="commentContent" class="col-md-12 form-control" style="border:1px solid gray"
                               placeholder="Votre commentaire ..."></textarea>
-                    <br><br>
-                </div>
-                <br>
-                <input type="submit" value="Commenter" class="btn btn-success btn-lg col-xs-2 col-xs-offset-5"/>
-            </form>
+                        <br><br>
+                    </div>
+                    <br>
+                    <input type="submit" value="Commenter" class="btn btn-success btn-lg col-xs-2 col-xs-offset-5"/>
+                </form>
+            </div>
         </div>
-    </div>
-    <!-- End for comment the idea-->
+    </c:if>
 </section>
-
+<!-- End for comment the idea-->
 
 </body>
 </html>

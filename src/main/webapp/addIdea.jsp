@@ -54,7 +54,6 @@
                     </select>
                     <br> <br>
                 </div>
-
                 <br>
                 <div class="col-md-12">
                     <input type="submit" value="Valider" class="col-md-2 col-md-offset-5 btn btn-danger"/>
