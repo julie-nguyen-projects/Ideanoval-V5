@@ -15,7 +15,7 @@
             <div class="col-lg-12">
                 <div class="intro-text">
                     <span class="name">Ideanoval</span>
-                    <hr class="star-light"></hr>
+                    <hr class="star-light">
                     <span class="skills">Idée : ${idea.title}<br></span>
                     </span>
                 </div>
@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2>${idea.title}</h2>
-                <hr class="star-primary"></hr>
+                <hr class="star-primary">
             </div>
         </div>
 
@@ -50,7 +50,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2>Commentaires</h2>
-                <hr class="star-primary"></hr>
+                <hr class="star-primary">
             </div>
         </div>
 
@@ -74,7 +74,7 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <h2>Commenter</h2>
-            <hr class="star-primary"></hr>
+            <hr class="star-primary">
         </div>
     </div>
 
@@ -82,8 +82,8 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <p>Vous devez être inscrit(e) et vous connecter pour poster un commentaire.<br></p>
-                <a href="/Ideanoval/register" class="btn btn-success btn-lg">S'inscrire</a>
-                <a href="/Ideanoval/login" class="btn btn-success btn-lg">Se connecter</a>
+                <a href="${pageContext.request.contextPath}/register" class="btn btn-success btn-lg">S'inscrire</a>
+                <a href="${pageContext.request.contextPath}/login" class="btn btn-success btn-lg">Se connecter</a>
             </div>
         </div>
 

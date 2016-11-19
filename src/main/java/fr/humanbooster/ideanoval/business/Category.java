@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Nea on 13/11/2016.
  */
 @Entity
-public class Category implements Serializable{
+public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

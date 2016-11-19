@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Created by Nea on 13/11/2016.
  */
 @Entity
-public class Comment implements Serializable{
+public class Comment implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

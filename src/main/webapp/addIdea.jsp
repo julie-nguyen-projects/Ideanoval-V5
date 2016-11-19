@@ -15,7 +15,7 @@
             <div class="col-lg-12">
                 <div class="intro-text">
                     <span class="name">Ideanoval</span>
-                    <hr class="star-light"></hr>
+                    <hr class="star-light">
                     <span class="skills">Proposer une idée <br></span>
                     </span>
                 </div>
@@ -47,7 +47,7 @@
                     <br>
                     <select class="form-control" name="ID_CATEGORY">
                         <c:forEach items="${categories}" var="category" varStatus="status">
-                                <option value="${category.idCategory}" required="required" id="${category.idCategory}">
+                                <option value="${category.idCategory}" required="true" id="${category.idCategory}">
                                         ${category.label} (${category.description})
                                 </option>
                         </c:forEach>

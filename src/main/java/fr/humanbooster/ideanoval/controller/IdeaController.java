@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -77,9 +76,7 @@ public class IdeaController {
     public ModelAndView anIdea(@RequestParam(name = "id") String id) {
         ModelAndView mav = new ModelAndView("anIdea");
         Idea idea = ideaService.getIdeaById(id);
-        System.out.println("<<< Date " + idea.getPublicationDateIdea());
         mav.addObject("idea", idea);
-        mav.addObject("comments", commentService.getAllCommentsOfAnIdea(idea.getIdIdea()));
         return mav;
     }
 

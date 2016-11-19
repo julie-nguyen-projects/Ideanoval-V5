@@ -17,16 +17,16 @@
             <div class="col-lg-12">
                 <div class="intro-text">
                     <span class="name">Ideanoval</span>
-                    <hr class="star-light"></hr>
+                    <hr class="star-light">
                     <span class="skills">Bonjour ${user.pseudo} ! <br><br></span>
                     <c:if test="${sessionScope.id == null}">
-                        <a href="/Ideanoval/login" class="btn btn-success btn-lg">Se connecter</a>
-                        <a href="/Ideanoval/register" class="btn btn-success btn-lg">S'inscrire</a>
+                        <a href="${pageContext.request.contextPath}/login" class="btn btn-success btn-lg">Se connecter</a>
+                        <a href="${pageContext.request.contextPath}/register" class="btn btn-success btn-lg">S'inscrire</a>
                     </c:if>
 
                     <c:if test="${sessionScope.id != null}">
-                        <a href="/Ideanoval/addIdea" class="btn btn-success btn-lg">Ajouter une idée</a>
-                        <a href="/Ideanoval/logout" class="btn btn-success btn-lg">Se déconnecter</a>
+                        <a href="${pageContext.request.contextPath}/addIdea" class="btn btn-success btn-lg">Ajouter une idée</a>
+                        <a href="${pageContext.request.contextPath}/logout" class="btn btn-success btn-lg">Se déconnecter</a>
                     </c:if>
                     </span>
                 </div>
@@ -40,7 +40,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2>De la suite dans vos idées</h2>
-                <hr class="star-primary"></hr>
+                <hr class="star-primary">
             </div>
         </div>
 
@@ -48,7 +48,7 @@
 
             <c:forEach items="${ideas}" var="idea" >
                 <div class="col-sm-4 portfolio-item" style="height: 200px">
-                    <a href="/Ideanoval/anIdea?id=${idea.idIdea}">
+                    <a href="${pageContext.request.contextPath}/anIdea?id=${idea.idIdea}">
                         <img src="#" class="img-responsive">
 
                     <h4>${idea.title}</h4>
@@ -62,7 +62,7 @@
 
         <br>
 
-        <a href="/Ideanoval/submitCategory">Proposer une catégorie...</a>
+        <a href="${pageContext.request.contextPath}/submitCategory">Proposer une catégorie...</a>
 
     </div>
 </section>

@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Nea on 13/11/2016.
  */
 @Entity
-public class User implements Serializable{
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

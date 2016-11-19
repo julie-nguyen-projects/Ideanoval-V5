@@ -15,7 +15,7 @@
             <div class="col-lg-12">
                 <div class="intro-text">
                     <span class="name">Ideanoval</span>
-                    <hr class="star-light"></hr>
+                    <hr class="star-light">
                     <span class="skills">Formulaire d'inscription <br></span>
                     </span>
                 </div>

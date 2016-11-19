@@ -69,14 +69,14 @@ public class UserController {
 //Login
 //======================
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView loginGet(){
+    public ModelAndView loginGet() {
         ModelAndView mav = new ModelAndView("/login");
         mav.addObject("user", new User());
         return mav;
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView loginPost(@ModelAttribute("user") User user){
+    public ModelAndView loginPost(@ModelAttribute("user") User user) {
         User userConnected = userService.login(user.getEmail(), user.getPassword());
 
         if (userConnected != null) {
@@ -92,7 +92,7 @@ public class UserController {
 //Logout
 //======================
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public ModelAndView logout(){
+    public ModelAndView logout() {
         session.invalidate();
         return welcomePage();
     }

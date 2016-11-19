@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Repository
 @Primary
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
 
     @Autowired
     private SessionFactory sf;

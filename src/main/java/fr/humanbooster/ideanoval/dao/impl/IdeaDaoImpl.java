@@ -14,7 +14,7 @@ import java.util.List;
  */
 @Repository
 @Primary
-public class IdeaDaoImpl implements IdeaDao{
+public class IdeaDaoImpl implements IdeaDao {
 
     @Autowired
     private SessionFactory sf;
