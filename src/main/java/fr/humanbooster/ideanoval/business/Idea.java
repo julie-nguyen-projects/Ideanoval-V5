@@ -1,6 +1,8 @@
 package fr.humanbooster.ideanoval.business;
 
 import fr.humanbooster.ideanoval.utils.DateUtils;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -43,6 +45,7 @@ public class Idea implements Serializable {
     private List<Comment> comments;
 
     @OneToMany(mappedBy = "idea")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Vote> votes;
 
 //======================

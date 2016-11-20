@@ -66,7 +66,6 @@ public class IdeaController {
         User user = userService.findUserById(session.getAttribute("id").toString());
         Category category = categoryService.findCategoryById(idCategory);
         ideaService.createIdea(title, description, category, user);
-
         return userController.welcomePage();
     }
 

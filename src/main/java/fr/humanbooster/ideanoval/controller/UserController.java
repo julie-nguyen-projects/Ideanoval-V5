@@ -4,6 +4,7 @@ import fr.humanbooster.ideanoval.business.Idea;
 import fr.humanbooster.ideanoval.business.User;
 import fr.humanbooster.ideanoval.service.IdeaService;
 import fr.humanbooster.ideanoval.service.UserService;
+import fr.humanbooster.ideanoval.service.VoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,14 +30,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private VoteService voteService;
+
 //======================
 //Welcome page
 //======================
     @RequestMapping(value = {"", "/", "/index"}, method = RequestMethod.GET)
     public ModelAndView welcomePage() {
         ModelAndView mav = new ModelAndView("index");
-        List<Idea> ideas = ideaService.getAllIdeas();
-        mav.addObject("ideas", ideas);
+        mav.addObject("ideas", ideaService.getAllIdeas());
         if (session.getAttribute("id") != null) {
             mav.addObject("user", userService.findUserById(session.getAttribute("id").toString()));
             return mav;

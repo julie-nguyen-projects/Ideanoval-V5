@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by Julie on 20/11/2016.
  */
@@ -37,5 +39,10 @@ public class VoteServiceImpl implements VoteService{
     @Override
     public Vote findVoteByUserAndIdea(User user, Idea idea) {
         return vd.findVoteByUserAndIdea(user, idea);
+    }
+
+    @Override
+    public List getAllVotes() {
+        return vd.getAllVotes();
     }
 }

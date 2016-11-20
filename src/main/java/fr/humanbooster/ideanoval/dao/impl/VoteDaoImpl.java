@@ -46,4 +46,9 @@ public class VoteDaoImpl implements VoteDao{
         }
         return vote;
     }
+
+    @Override
+    public List getAllVotes() {
+        return sf.getCurrentSession().createQuery("FROM Vote ").getResultList();
+    }
 }
