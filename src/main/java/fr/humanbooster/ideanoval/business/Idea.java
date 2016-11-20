@@ -42,7 +42,7 @@ public class Idea implements Serializable {
     @OneToMany(mappedBy = "idea", fetch = FetchType.EAGER)
     private List<Comment> comments;
 
-    @OneToMany(mappedBy = "idea", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "idea")
     private List<Vote> votes;
 
 //======================

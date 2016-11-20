@@ -51,6 +51,7 @@
 				<value>fr.humanbooster.ideanoval.business.Idea</value>
 				<value>fr.humanbooster.ideanoval.business.Role</value>
 				<value>fr.humanbooster.ideanoval.business.User</value>
+				<value>fr.humanbooster.ideanoval.business.Vote</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

@@ -34,19 +34,39 @@
         </div>
 
         <!-- TODO picture -->
-        <h5 class="text-center">Idée proposée par ${idea.user.pseudo} le ${idea.publicationDateIdea} <br></h5>
-        <br>
-        <h5>Description de l'idée :</h5>
-        <div class="col-md-10 col-md-offset-1">
-            ${idea.description}
+        <div class="row">
+            <h5 class="text-center">Idée proposée par ${idea.user.pseudo} le ${idea.publicationDateIdea} <br></h5>
+            <br>
+            <h5>Description de l'idée :</h5>
+            <div class="col-md-10 col-md-offset-1">
+                ${idea.description}
+            </div>
         </div>
+
+        <!-- Vote -->
+        <div class="row" style="padding-top: 50px">
+            <c:if test="${sessionScope.id != null}">
+                <a href="${pageContext.request.contextPath}/topVote" class="col-xs-2 col-xs-offset-3 btn btn-success btn-lg">Top</a>
+                <a href="${pageContext.request.contextPath}/flopVote" class="col-xs-2 col-xs-offset-2 btn btn-success btn-lg">Flop</a>
+            </c:if>
+
+            <c:if test="${sessionScope.id == null}">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Vous devez être inscrit(e) et vous connecter pour voter.<br></p>
+                        <a href="${pageContext.request.contextPath}/register" class="btn btn-success btn-lg">S'inscrire</a>
+                        <a href="${pageContext.request.contextPath}/login" class="btn btn-success btn-lg">Se connecter</a>
+                    </div>
+                </div>
+            </c:if>
+        </div>
+        <!-- End for vote -->
     </div>
 </section>
-<!-- TODO vote -->
 
 <!-- All the comments -->
 <section>
-    <div class="container">
+    <div class="container" >
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2>Commentaires</h2>
@@ -68,44 +88,47 @@
         </c:forEach>
     </div>
 </section>
+<!-- End for all the comments -->
 
 <!-- Comment the idea-->
-<section>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h2>Commenter</h2>
-            <hr class="star-primary">
-        </div>
-    </div>
-
-    <c:if test="${sessionScope.id == null}">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p>Vous devez être inscrit(e) et vous connecter pour poster un commentaire.<br></p>
-                <a href="${pageContext.request.contextPath}/register" class="btn btn-success btn-lg">S'inscrire</a>
-                <a href="${pageContext.request.contextPath}/login" class="btn btn-success btn-lg">Se connecter</a>
+<footer>
+    <div class="footer-above" style="padding-bottom: 50px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Commenter</h2>
+                </div>
             </div>
-        </div>
 
-    </c:if>
+            <c:if test="${sessionScope.id == null}">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Vous devez être inscrit(e) et vous connecter pour poster un commentaire.<br></p>
+                        <a href="${pageContext.request.contextPath}/register" class="btn btn-success btn-lg">S'inscrire</a>
+                        <a href="${pageContext.request.contextPath}/login" class="btn btn-success btn-lg">Se connecter</a>
+                    </div>
+                </div>
+            </c:if>
 
-    <c:if test="${sessionScope.id != null}">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <form action="commentAnIdea" method="POST">
-                    <input type="hidden" name="idea_id" value="${idea.idIdea}" />
-                    <div class="form-group col-md-12 floating-label-form-group controls">
+            <c:if test="${sessionScope.id != null}">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <form action="commentAnIdea" method="POST">
+                            <input type="hidden" name="idea_id" value="${idea.idIdea}" />
+                            <div class="form-group col-md-12 floating-label-form-group controls">
                     <textarea rows="6" name="commentContent" class="col-md-12 form-control" style="border:1px solid gray"
                               placeholder="Votre commentaire ..."></textarea>
-                        <br><br>
+                                <br><br>
+                            </div>
+                            <br>
+                            <input type="submit" value="Commenter" class="btn btn-success btn-lg col-xs-2 col-xs-offset-5"/>
+                        </form>
                     </div>
-                    <br>
-                    <input type="submit" value="Commenter" class="btn btn-success btn-lg col-xs-2 col-xs-offset-5"/>
-                </form>
-            </div>
+                </div>
+            </c:if>
         </div>
-    </c:if>
-</section>
+    </div>
+</footer>
 <!-- End for comment the idea-->
 
 </body>
