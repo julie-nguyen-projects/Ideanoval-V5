@@ -40,6 +40,10 @@
 		<constructor-arg ref="sessionFactory"/>
 	</bean>
 
+	<bean id="voteDao" class="fr.humanbooster.ideanoval.dao.impl.VoteDaoImpl">
+		<constructor-arg ref="sessionFactory"/>
+	</bean>
+
 	<!-- Business -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">

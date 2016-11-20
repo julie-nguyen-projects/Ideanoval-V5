@@ -45,9 +45,15 @@
 
         <!-- Vote -->
         <div class="row" style="padding-top: 50px">
-            <c:if test="${sessionScope.id != null}">
-                <a href="${pageContext.request.contextPath}/topVote" class="col-xs-2 col-xs-offset-3 btn btn-success btn-lg">Top</a>
-                <a href="${pageContext.request.contextPath}/flopVote" class="col-xs-2 col-xs-offset-2 btn btn-success btn-lg">Flop</a>
+            <c:if test="${sessionScope.id != null && vote == null}">
+                <a href="${pageContext.request.contextPath}/topVote?id=${idea.idIdea}" class="col-xs-2 col-xs-offset-3 btn btn-success btn-lg">Top</a>
+                <a href="${pageContext.request.contextPath}/flopVote?id=${idea.idIdea}" class="col-xs-2 col-xs-offset-2 btn btn-success btn-lg">Flop</a>
+            </c:if>
+
+            <c:if test="${sessionScope.id != null && vote != null}">
+                <div class="col-md-12 text-center">
+                    <p>Vous avez voté <c:if test="${vote.note == 1}">Top</c:if> <c:if test="${vote.note == -1}">Flop</c:if> pour cette idée !</p>
+                </div>
             </c:if>
 
             <c:if test="${sessionScope.id == null}">
@@ -116,7 +122,7 @@
                         <form action="commentAnIdea" method="POST">
                             <input type="hidden" name="idea_id" value="${idea.idIdea}" />
                             <div class="form-group col-md-12 floating-label-form-group controls">
-                    <textarea rows="6" name="commentContent" class="col-md-12 form-control" style="border:1px solid gray"
+                    <textarea rows="6" name="commentContent" class="col-md-12 form-control" style="color: white"
                               placeholder="Votre commentaire ..."></textarea>
                                 <br><br>
                             </div>

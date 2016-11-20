@@ -3,10 +3,8 @@ package fr.humanbooster.ideanoval.controller;
 import fr.humanbooster.ideanoval.business.Category;
 import fr.humanbooster.ideanoval.business.Idea;
 import fr.humanbooster.ideanoval.business.User;
-import fr.humanbooster.ideanoval.service.CategoryService;
-import fr.humanbooster.ideanoval.service.CommentService;
-import fr.humanbooster.ideanoval.service.IdeaService;
-import fr.humanbooster.ideanoval.service.UserService;
+import fr.humanbooster.ideanoval.business.Vote;
+import fr.humanbooster.ideanoval.service.*;
 import fr.humanbooster.ideanoval.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,6 +37,9 @@ public class IdeaController {
 
     @Autowired
     private CommentService commentService;
+
+    @Autowired
+    private VoteService voteService;
 
     @Autowired
     private UserController userController = new UserController();
@@ -77,22 +78,44 @@ public class IdeaController {
         ModelAndView mav = new ModelAndView("anIdea");
         Idea idea = ideaService.getIdeaById(id);
         mav.addObject("idea", idea);
+        if (session.getAttribute("id") != null) {
+            User user = userService.findUserById(session.getAttribute("id").toString());
+            Vote vote = voteService.findVoteByUserAndIdea(user, idea);
+            mav.addObject("vote", vote);
+        }
         return mav;
     }
 
-
 //======================
-//A user comment an idea
+//A user comments an idea
 //======================
     @RequestMapping(value = "/commentAnIdea", method = RequestMethod.POST)
     public ModelAndView commentAnIdea(@RequestParam(name = "idea_id") String idIdea,
                                       @RequestParam Map<String, Object> map) {
-        ModelAndView mav = new ModelAndView("anIdea");
         User user = userService.findUserById(session.getAttribute("id").toString());
         String content = map.get("commentContent").toString();
         Idea idea = ideaService.getIdeaById(idIdea);
         commentService.addComment(content, user, idea);
+        return anIdea(idIdea);
+    }
 
+
+//======================
+//A user votes an idea
+//======================
+    @RequestMapping(value = "topVote", method = RequestMethod.GET)
+    public ModelAndView topVote(@RequestParam(name = "id") String idIdea) {
+        Idea idea = ideaService.getIdeaById(idIdea);
+        User user = userService.findUserById(session.getAttribute("id").toString());
+        voteService.addTopVote(user, idea);
+        return anIdea(idIdea);
+    }
+
+    @RequestMapping(value = "flopVote", method = RequestMethod.GET)
+    public ModelAndView flopVote(@RequestParam(name = "id") String idIdea) {
+        Idea idea = ideaService.getIdeaById(idIdea);
+        User user = userService.findUserById(session.getAttribute("id").toString());
+        voteService.addFlopVote(user, idea);
         return anIdea(idIdea);
     }
 
