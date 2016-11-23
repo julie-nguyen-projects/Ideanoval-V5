@@ -45,45 +45,45 @@
         </div>
 
         <div class="row">
-            <c:forEach items="${ideas}" var="idea" >
-                <div class="col-sm-4 portfolio-item" style="height: 200px">
-                    <a href="${pageContext.request.contextPath}/anIdea?id=${idea.idIdea}" class="portfolio-link">
-                        <div class="caption" style="height: 200px">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"> </i>
+            <c:if test="${ideas.size() == 0}">
+                <p>Il n'y a aucune idée proposée, n'hésitez pas à vous inscrire et à soumettre votre suite d'idées...</p>
+            </c:if>
+
+            <c:if test="${ideas.size() != 0}">
+                <c:forEach items="${ideas}" var="idea" >
+                    <div class="col-sm-4 portfolio-item" style="height: 200px">
+                        <a href="${pageContext.request.contextPath}/anIdea?id=${idea.idIdea}" class="portfolio-link">
+                            <div class="caption" style="height: 200px">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"> </i>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Display votes -->
-                        <div style="background-color: #2C3E50; padding: 3px; text-align: center">
-                            <c:set var="topCount" value="0"/>
-                            <c:set var="flopCount" value="0"/>
-                            <c:forEach items="${idea.votes}" var="vote">
-                                <c:if test="${vote.note > 0}">
-                                    <c:set var="topCount" value="${topCount + vote.note}"/>
-                                </c:if>
-                                <c:if test="${vote.note < 0}">
-                                    <c:set var="flopCount" value="${flopCount - vote.note}"/>
-                                </c:if>
-                            </c:forEach>
-                            <h5 style="align-items: center; color:white">${topCount} Top & ${flopCount} Flop</h5>
-                        </div>
-                        <!-- End of display votes -->
+                            <!-- Display votes -->
+                            <div style="background-color: #2C3E50; padding: 3px; text-align: center">
+                                <c:set var="topCount" value="0"/>
+                                <c:set var="flopCount" value="0"/>
+                                <c:forEach items="${idea.votes}" var="vote">
+                                    <c:if test="${vote.note > 0}">
+                                        <c:set var="topCount" value="${topCount + vote.note}"/>
+                                    </c:if>
+                                    <c:if test="${vote.note < 0}">
+                                        <c:set var="flopCount" value="${flopCount - vote.note}"/>
+                                    </c:if>
+                                </c:forEach>
+                                <h5 style="align-items: center; color:white">${topCount} Top & ${flopCount} Flop</h5>
+                            </div>
+                            <!-- End of display votes -->
 
-                            <%--<img src="#" class="img-responsive">--%>
-                        <h4>${idea.title}</h4>
-                        <p><c:out value="${idea.category.label}"/></p>
-                        <p>${idea.user.pseudo}</p>
-                    </a>
-                </div>
-            </c:forEach>
+                                <%--<img src="#" class="img-responsive">--%>
+                            <h4>${idea.title}</h4>
+                            <p><c:out value="${idea.category.label}"/></p>
+                            <p>${idea.user.pseudo}</p>
+                        </a>
+                    </div>
+                </c:forEach>
+            </c:if>
         </div>
-
-
-        <br>
-
-        <a href="${pageContext.request.contextPath}/submitCategory">Proposer une catégorie...</a>
-
     </div>
 </section>
 

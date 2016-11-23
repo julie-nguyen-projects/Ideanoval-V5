@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d3c87ab-5c65-4e51-a663-0e3788eda170" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/AlertMotive.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/CommentAlert.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/IdeaAlert.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/dao/IdeaAlertDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/dao/impl/IdeaAlertDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/service/IdeaAlertService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/service/impl/IdeaAlertServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/alertIdea.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/Alert.java" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/Alert.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/Comment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/User.java" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/Vote.java" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/Vote.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/controller/IdeaController.java" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/controller/IdeaController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/anIdea.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/anIdea.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
     </list>
     <ignored path="Ideanoval.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -112,17 +97,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+            <state relative-caret-position="340">
+              <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alertIdea.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="alertIdea.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/alertIdea.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="194">
@@ -181,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/dao/VoteDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/dao/impl/VoteDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/service/impl/VoteServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/Idea.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/business/Vote.java" />
@@ -199,6 +183,7 @@
         <option value="$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/controller/IdeaController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/alertIdea.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/anIdea.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       </list>
     </option>
   </component>
@@ -588,7 +573,7 @@
   <component name="RunManager" selected="Tomcat Server.index.jsp">
     <configuration default="false" name="index.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.0.M9" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/index.jsp" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <option name="UPDATING_POLICY" value="update-resources" />
       <deployment>
         <artifact name="Ideanoval:war exploded">
           <settings>
@@ -1102,7 +1087,7 @@
       <workItem from="1479716143998" duration="2284000" />
       <workItem from="1479719077139" duration="5390000" />
       <workItem from="1479822839222" duration="1300000" />
-      <workItem from="1479889622869" duration="1518000" />
+      <workItem from="1479889622869" duration="2930000" />
     </task>
     <task id="LOCAL-00005" summary="Some clean code thanks to CheckStyle">
       <created>1479576946545</created>
@@ -1139,11 +1124,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479652212848</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="AlertIdea : user can alerts an Idea, and specify the motive">
+      <created>1479892081298</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1479892081298</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47693000" />
+    <option name="totallyTimeSpent" value="49105000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="41" width="1938" height="1048" extended-state="6" />
@@ -1239,7 +1231,8 @@
     <MESSAGE value="Vote : jsp part" />
     <MESSAGE value="Vote : users can vote top and flop" />
     <MESSAGE value="index.jsp : search logo when hover on each idea, top and flop votes displayed" />
-    <option name="LAST_COMMIT_MESSAGE" value="index.jsp : search logo when hover on each idea, top and flop votes displayed" />
+    <MESSAGE value="AlertIdea : user can alerts an Idea, and specify the motive" />
+    <option name="LAST_COMMIT_MESSAGE" value="AlertIdea : user can alerts an Idea, and specify the motive" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1273,6 +1266,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="22" column="77" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1280,6 +1274,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="77" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1287,6 +1282,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10">
           <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1360,6 +1356,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1405,6 +1402,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1054#1055#0" expanded="false" />
+            <element signature="e#1113#1114#0" expanded="false" />
+            <element signature="e#1199#1200#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1412,6 +1415,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="721">
           <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#768#769#0" expanded="false" />
+            <element signature="e#817#818#0" expanded="false" />
+            <element signature="e#1445#1446#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1419,6 +1428,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="45" />
+          <folding>
+            <element signature="e#1543#1544#0" expanded="false" />
+            <element signature="e#1577#1578#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1426,6 +1439,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1441,6 +1457,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="14" />
+          <folding>
+            <element signature="e#941#942#0" expanded="false" />
+            <element signature="e#983#984#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1448,6 +1468,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="47" column="106" selection-start-line="47" selection-start-column="106" selection-end-line="47" selection-end-column="106" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1465,6 +1486,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="19" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1479,6 +1501,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1486,6 +1511,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
           <caret line="65" column="69" selection-start-line="65" selection-start-column="69" selection-end-line="65" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1500,6 +1526,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1251#1252#0" expanded="false" />
+            <element signature="e#1283#1284#0" expanded="false" />
+            <element signature="e#1331#1332#0" expanded="false" />
+            <element signature="e#1373#1374#0" expanded="false" />
+            <element signature="e#1414#1415#0" expanded="false" />
+            <element signature="e#1451#1452#0" expanded="false" />
+            <element signature="e#1511#1512#0" expanded="false" />
+            <element signature="e#1563#1564#0" expanded="false" />
+            <element signature="e#1592#1593#0" expanded="false" />
+            <element signature="e#1619#1620#0" expanded="false" />
+            <element signature="e#1657#1658#0" expanded="false" />
+            <element signature="e#1689#1690#0" expanded="false" />
+            <element signature="e#1718#1719#0" expanded="false" />
+            <element signature="e#1745#1746#0" expanded="false" />
+            <element signature="e#1783#1784#0" expanded="false" />
+            <element signature="e#1815#1816#0" expanded="false" />
+            <element signature="e#1867#1868#0" expanded="false" />
+            <element signature="e#1903#1904#0" expanded="false" />
+            <element signature="e#1973#1974#0" expanded="false" />
+            <element signature="e#2023#2024#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1507,6 +1556,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1528,6 +1578,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="25" column="64" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="64" />
+          <folding>
+            <element signature="e#919#920#0" expanded="false" />
+            <element signature="e#944#945#0" expanded="false" />
+            <element signature="e#978#979#0" expanded="false" />
+            <element signature="e#1006#1007#0" expanded="false" />
+            <element signature="e#1038#1039#0" expanded="false" />
+            <element signature="e#1066#1067#0" expanded="false" />
+            <element signature="e#1108#1109#0" expanded="false" />
+            <element signature="e#1142#1143#0" expanded="false" />
+            <element signature="e#1180#1181#0" expanded="false" />
+            <element signature="e#1214#1215#0" expanded="false" />
+            <element signature="e#1268#1269#0" expanded="false" />
+            <element signature="e#1314#1315#0" expanded="false" />
+            <element signature="e#1352#1353#0" expanded="false" />
+            <element signature="e#1381#1382#0" expanded="false" />
+            <element signature="e#1430#1431#0" expanded="false" />
+            <element signature="e#1466#1467#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1581,14 +1649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/humanbooster/ideanoval/service/impl/IdeaAlertServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1617,6 +1677,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
           <folding />
         </state>
       </provider>
