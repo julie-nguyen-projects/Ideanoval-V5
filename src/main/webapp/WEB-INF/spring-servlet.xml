@@ -48,6 +48,10 @@
 		<constructor-arg ref="sessionFactory"/>
 	</bean>
 
+	<bean id="commentAlertDao" class="fr.humanbooster.ideanoval.dao.impl.CommentAlertDaoImpl">
+		<constructor-arg ref="sessionFactory"/>
+	</bean>
+
 	<!-- Business -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">

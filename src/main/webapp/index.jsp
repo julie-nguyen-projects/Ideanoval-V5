@@ -77,8 +77,8 @@
 
                                 <%--<img src="#" class="img-responsive">--%>
                             <h4>${idea.title}</h4>
-                            <p><c:out value="${idea.category.label}"/></p>
-                            <p>${idea.user.pseudo}</p>
+                            <p>Catégorie : ${idea.category.label}</p>
+                            <p>Idée proposée par : ${idea.user.pseudo}</p>
                         </a>
                     </div>
                 </c:forEach>

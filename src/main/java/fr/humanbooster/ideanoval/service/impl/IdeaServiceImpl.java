@@ -40,7 +40,7 @@ public class IdeaServiceImpl implements IdeaService {
 
     @Override
     public Idea getIdeaById(String idIdea) {
-        if (id == null) {
+        if (idIdea == null) {
             return null;
         } else {
             Idea idea = id.findIdeaById(Long.parseLong(idIdea));

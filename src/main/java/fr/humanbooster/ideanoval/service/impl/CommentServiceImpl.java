@@ -39,4 +39,14 @@ public class CommentServiceImpl implements CommentService {
     public List getAllCommentsOfAnIdea(long idIdea) {
         return cd.getAllCommentsOfAnIdea(idIdea);
     }
+
+    @Override
+    public Comment getCommentById(String idComment) {
+        if (idComment == null) {
+            return null;
+        } else {
+            Comment comment = cd.getCommentById(Long.parseLong(idComment));
+            return comment;
+        }
+    }
 }

@@ -1,5 +1,6 @@
 package fr.humanbooster.ideanoval.service;
 
+import fr.humanbooster.ideanoval.business.Comment;
 import fr.humanbooster.ideanoval.business.Idea;
 import fr.humanbooster.ideanoval.business.User;
 
@@ -15,4 +16,6 @@ public interface CommentService {
     public List getAllComments();
 
     public List getAllCommentsOfAnIdea(long idIdea);
+
+    public Comment getCommentById(String idComment);
 }

@@ -14,4 +14,6 @@ public interface CommentDao {
     public List getAllComments();
 
     public List getAllCommentsOfAnIdea(long idIdea);
+
+    public Comment getCommentById(long idComment);
 }

@@ -43,33 +43,46 @@
         </div>
 
         <!-- Vote -->
+        <!-- User connected, not voted yet -->
         <div class="row" style="padding-top: 50px">
             <c:if test="${sessionScope.id != null && vote == null}">
-                <p>
-                    <a href="${pageContext.request.contextPath}/topVote?id=${idea.idIdea}" class="col-xs-2 col-xs-offset-3 btn btn-success btn-lg">Top</a>
-                    <a href="${pageContext.request.contextPath}/flopVote?id=${idea.idIdea}" class="col-xs-2 col-xs-offset-2 btn btn-success btn-lg">Flop</a>
-                </p>
-                <p>L'idée ne respecte pas la charte ? <a href="${pageContext.request.contextPath}/alertIdea?id=${idea.idIdea}" class="btn btn-danger">Signaler l'idée</a></p>
-            </c:if>
-
-            <c:if test="${sessionScope.id != null && vote != null}">
-                <div class="col-md-12 text-center">
-                    <p>Vous avez voté <c:if test="${vote.note == 1}">Top</c:if> <c:if test="${vote.note == -1}">Flop</c:if> pour cette idée !</p>
-                    <p>L'idée ne respecte pas la charte ? <a href="${pageContext.request.contextPath}/alertIdea?id=${idea.idIdea}" class="btn btn-danger">Signaler l'idée</a></p>
-                </div>
-            </c:if>
-
-            <c:if test="${sessionScope.id == null}">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p>Vous devez être inscrit(e) et vous connecter pour voter.<br></p>
-                        <a href="${pageContext.request.contextPath}/register" class="btn btn-success btn-lg">S'inscrire</a>
-                        <a href="${pageContext.request.contextPath}/login" class="btn btn-success btn-lg">Se connecter</a>
-                    </div>
-                </div>
+            <p>
+                <a href="${pageContext.request.contextPath}/topVote?id=${idea.idIdea}" class="col-xs-2 col-xs-offset-3 btn btn-success btn-lg">Top</a>
+                <a href="${pageContext.request.contextPath}/flopVote?id=${idea.idIdea}" class="col-xs-2 col-xs-offset-2 btn btn-success btn-lg">Flop</a>
+            </p>
+        </div>
+        <div class="row" style="padding-top: 50px">
+            <div class="col-md-12 text-center">
+                <p>L'idée ne respecte pas la charte ?</p>
+                <p><a href="${pageContext.request.contextPath}/alertIdea?id=${idea.idIdea}" class="btn btn-danger">Signaler l'idée</a></p
+            </div>
             </c:if>
         </div>
-        <!-- End for vote -->
+
+        <!-- User connected, voted -->
+        <c:if test="${sessionScope.id != null && vote != null}">
+        <div class="col-md-12 text-center">
+            <p>Vous avez voté <c:if test="${vote.note == 1}">Top</c:if> <c:if test="${vote.note == -1}">Flop</c:if> pour cette idée !</p>
+        </div>
+        <div class="col-md-12 text-center" style="margin-top: 50px">
+            <p>L'idée ne respecte pas la charte ?</p>
+            <p><a href="${pageContext.request.contextPath}/alertIdea?id=${idea.idIdea}" class="btn btn-danger">Signaler l'idée</a></p>
+        </div>
+    </div>
+    </c:if>
+
+    <!-- Not a user connected -->
+    <c:if test="${sessionScope.id == null}">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>Vous devez être inscrit(e) et vous connecter pour voter.<br></p>
+                <a href="${pageContext.request.contextPath}/register" class="btn btn-success btn-lg">S'inscrire</a>
+                <a href="${pageContext.request.contextPath}/login" class="btn btn-success btn-lg">Se connecter</a>
+            </div>
+        </div>
+    </c:if>
+    </div>
+    <!-- End for vote -->
     </div>
 </section>
 
@@ -92,6 +105,9 @@
                             ${comment.commentContent}
                         <br><br>
                     </div>
+                </div>
+                <div class="col-md-12 text-right">
+                    <a href="${pageContext.request.contextPath}/alertComment?id=${comment.idComment}" class="btn btn-danger">Signaler le commentaire</a>
                 </div>
             </div>
         </c:forEach>

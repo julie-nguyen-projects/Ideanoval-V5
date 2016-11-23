@@ -42,6 +42,9 @@ public class IdeaController {
     private IdeaAlertService ideaAlertService;
 
     @Autowired
+    private CommentAlertService commentAlertService;
+
+    @Autowired
     private UserController userController = new UserController();
 
     private DateUtils dateUtils;
@@ -140,6 +143,27 @@ public class IdeaController {
     }
 
 
+//======================
+//A user alerts about a comment
+//======================
+    @RequestMapping(value = "alertComment", method = RequestMethod.GET)
+    public ModelAndView alertCommentGet(@RequestParam(name = "id") String idComment) {
+        ModelAndView mav = new ModelAndView("alertComment");
+        mav.addObject("comment", commentService.getCommentById(idComment));
+        mav.addObject("motive", new AlertMotive());
+        return mav;
+    }
+
+    @RequestMapping(value = "alertComment", method = RequestMethod.POST)
+    public ModelAndView alertCommentPost(@RequestParam(name = "COMMENT_ID") String idComment,
+                                      @ModelAttribute("motive") AlertMotive alertMotive) {
+        String motive = alertMotive.getLabel();
+        String description = alertMotive.getDescription();
+        Comment comment = commentService.getCommentById(idComment);
+        User user = userService.findUserById(session.getAttribute("id").toString());
+        commentAlertService.createCommentAlert(user, motive, description, comment);
+        return userController.welcomePage();
+    }
 
 
 }

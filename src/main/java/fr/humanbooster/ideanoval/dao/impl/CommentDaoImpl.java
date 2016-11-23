@@ -41,4 +41,9 @@ public class CommentDaoImpl implements CommentDao {
                 .setParameter("idIdea", idIdea)
                 .getResultList();
     }
+
+    @Override
+    public Comment getCommentById(long idComment) {
+        return sf.getCurrentSession().byId(Comment.class).load(idComment);
+    }
 }
