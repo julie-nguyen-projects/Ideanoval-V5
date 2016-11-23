@@ -1,9 +1,6 @@
 package fr.humanbooster.ideanoval.controller;
 
-import fr.humanbooster.ideanoval.business.Category;
-import fr.humanbooster.ideanoval.business.Idea;
-import fr.humanbooster.ideanoval.business.User;
-import fr.humanbooster.ideanoval.business.Vote;
+import fr.humanbooster.ideanoval.business.*;
 import fr.humanbooster.ideanoval.service.*;
 import fr.humanbooster.ideanoval.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +37,9 @@ public class IdeaController {
 
     @Autowired
     private VoteService voteService;
+
+    @Autowired
+    private IdeaAlertService ideaAlertService;
 
     @Autowired
     private UserController userController = new UserController();
@@ -98,7 +98,6 @@ public class IdeaController {
         return anIdea(idIdea);
     }
 
-
 //======================
 //A user votes an idea
 //======================
@@ -117,6 +116,29 @@ public class IdeaController {
         voteService.addFlopVote(user, idea);
         return anIdea(idIdea);
     }
+
+//======================
+//A user alerts about an idea
+//======================
+    @RequestMapping(value = "alertIdea", method = RequestMethod.GET)
+    public ModelAndView alertIdeaGet(@RequestParam(name = "id") String idIdea) {
+        ModelAndView mav = new ModelAndView("alertIdea");
+        mav.addObject("idea", ideaService.getIdeaById(idIdea));
+        mav.addObject("motive", new AlertMotive());
+        return mav;
+    }
+
+    @RequestMapping(value = "alertIdea", method = RequestMethod.POST)
+    public ModelAndView alertIdeaPost(@RequestParam(name = "IDEA_ID") String idIdea,
+                                      @ModelAttribute("motive") AlertMotive alertMotive) {
+        String motive = alertMotive.getLabel();
+        String description = alertMotive.getDescription();
+        Idea idea = ideaService.getIdeaById(idIdea);
+        User user = userService.findUserById(session.getAttribute("id").toString());
+        ideaAlertService.createIdeaAlert(user, motive, description, idea);
+        return userController.welcomePage();
+    }
+
 
 
 

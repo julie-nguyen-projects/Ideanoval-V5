@@ -2,6 +2,7 @@ package fr.humanbooster.ideanoval.business;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Nea on 13/11/2016.
@@ -29,6 +30,9 @@ public class Comment implements Serializable {
     @JoinColumn(name = "idIdea")
     private Idea idea;
 
+    @OneToMany(mappedBy = "comment")
+    private List<CommentAlert> commentAlerts;
+
     // TODO add date
 
 //======================
@@ -48,7 +52,7 @@ public class Comment implements Serializable {
         this.idea = idea;
     }
 
-    //======================
+//======================
 //Getters and Setters
 //======================
     public long getIdComment() {
@@ -81,5 +85,13 @@ public class Comment implements Serializable {
 
     public void setIdea(Idea idea) {
         this.idea = idea;
+    }
+
+    public List<CommentAlert> getCommentAlerts() {
+        return commentAlerts;
+    }
+
+    public void setCommentAlerts(List<CommentAlert> commentAlerts) {
+        this.commentAlerts = commentAlerts;
     }
 }

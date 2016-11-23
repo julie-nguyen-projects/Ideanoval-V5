@@ -49,6 +49,9 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Vote> votes;
 
+    @OneToMany(mappedBy = "user")
+    private List<Alert> alerts;
+
 //======================
 //Constructors
 //======================
@@ -149,5 +152,13 @@ public class User implements Serializable {
 
     public void setVotes(List<Vote> votes) {
         this.votes = votes;
+    }
+
+    public List<Alert> getAlerts() {
+        return alerts;
+    }
+
+    public void setAlerts(List<Alert> alerts) {
+        this.alerts = alerts;
     }
 }

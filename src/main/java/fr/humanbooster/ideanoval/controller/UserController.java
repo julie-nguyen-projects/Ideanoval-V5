@@ -59,11 +59,9 @@ public class UserController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ModelAndView registerPost(@ModelAttribute("user") User user) {
-
         String pseudo = user.getPseudo();
         String email = user.getEmail();
         String password = user.getPassword();
-
         long idUser = userService.addUser(pseudo, email, password);
         return loginGet();
     }

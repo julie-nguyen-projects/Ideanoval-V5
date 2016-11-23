@@ -1,12 +1,13 @@
 package fr.humanbooster.ideanoval.business;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by Julie on 19/11/2016.
  */
 @Entity
-public class Vote {
+public class Vote implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

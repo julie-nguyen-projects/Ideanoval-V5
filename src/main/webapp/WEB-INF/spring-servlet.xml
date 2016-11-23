@@ -44,6 +44,10 @@
 		<constructor-arg ref="sessionFactory"/>
 	</bean>
 
+	<bean id="ideaAlertDao" class="fr.humanbooster.ideanoval.dao.impl.IdeaAlertDaoImpl">
+		<constructor-arg ref="sessionFactory"/>
+	</bean>
+
 	<!-- Business -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
@@ -56,6 +60,10 @@
 				<value>fr.humanbooster.ideanoval.business.Role</value>
 				<value>fr.humanbooster.ideanoval.business.User</value>
 				<value>fr.humanbooster.ideanoval.business.Vote</value>
+				<value>fr.humanbooster.ideanoval.business.CommentAlert</value>
+				<value>fr.humanbooster.ideanoval.business.IdeaAlert</value>
+				<value>fr.humanbooster.ideanoval.business.Alert</value>
+				<value>fr.humanbooster.ideanoval.business.AlertMotive</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
