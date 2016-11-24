@@ -1,5 +1,6 @@
 package fr.humanbooster.ideanoval.dao.impl;
 
+import fr.humanbooster.ideanoval.business.Role;
 import fr.humanbooster.ideanoval.business.User;
 import fr.humanbooster.ideanoval.dao.UserDao;
 import org.hibernate.SessionFactory;
@@ -45,12 +46,26 @@ public class UserDaoImpl implements UserDao {
 
         if (results.size() == 1) {
             userTryingToConnect = (User) results.get(0);
+            return userTryingToConnect;
         }
-        return userTryingToConnect;
+        return null;
     }
 
     @Override
     public User findUserById(long id) {
         return sf.getCurrentSession().byId(User.class).load(id);
+    }
+
+    @Override
+    public Role findRoleByName(String userRole) {
+        Role role = null;
+        List results = sf.getCurrentSession().createQuery("FROM Role WHERE nameRole=:userRole")
+                .setParameter("userRole", userRole)
+                .getResultList();
+        if (results.size() == 1 ) {
+            role = (Role) results.get(0);
+            return role;
+        }
+        return null;
     }
 }

@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 
@@ -33,11 +34,13 @@ public class User implements Serializable {
 
     private boolean active;
 
-    @OneToMany(mappedBy = "user")
-    private List<Idea> ideas;
+    private boolean admin;
 
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date registerDateUser;
+
+    @OneToMany(mappedBy = "user")
+    private List<Idea> ideas;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Comment> comments;
@@ -62,6 +65,7 @@ public class User implements Serializable {
         this.pseudo = pseudo;
         this.email = email;
         this.password = password;
+        this.registerDateUser = Date.from(Instant.now());
     }
 
     public User(String pseudo, String email, String password, Role role) {
@@ -69,6 +73,7 @@ public class User implements Serializable {
         this.email = email;
         this.password = password;
         this.role = role;
+        this.registerDateUser = Date.from(Instant.now());
     }
 
 //======================
@@ -160,5 +165,13 @@ public class User implements Serializable {
 
     public void setAlerts(List<Alert> alerts) {
         this.alerts = alerts;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }

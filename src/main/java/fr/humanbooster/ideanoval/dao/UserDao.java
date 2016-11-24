@@ -1,5 +1,6 @@
 package fr.humanbooster.ideanoval.dao;
 
+import fr.humanbooster.ideanoval.business.Role;
 import fr.humanbooster.ideanoval.business.User;
 
 /**
@@ -12,4 +13,6 @@ public interface UserDao {
     public User findUserByEmailAndPassword(String email, String password);
 
     public User findUserById(long id);
+
+    public Role findRoleByName(String userRole);
 }
